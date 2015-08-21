@@ -22,6 +22,7 @@
       <li><a href="gradeForm.jsp">GradebookForm</a></li>
          <li><a href="allBook.jsp">All Gradebook</a></li>    
 		<li class="active"><a href="#">Calculation</a></li>
+		<li><a href="GPAcalc.jsp">GPA Calculator</a></li>
       </ul>
     </div>
   </div>

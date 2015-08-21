@@ -63,6 +63,9 @@ public class Gradebook extends HttpServlet {
 		    		allBook += result.getString("STUDENTID");
 		    		allBook+= "</td>";
 		    		allBook += "<td>";
+		    		allBook += result.getString("Classname");
+		    		allBook+= "</td>";
+		    		allBook += "<td>";
 		    		allBook += result.getString("ASSIGNMENT");
 		    		allBook+= "</td>";
 		    		allBook += "<td>";
@@ -92,6 +95,13 @@ public class Gradebook extends HttpServlet {
 			}
 			catch (SQLException e)
 			{
+				e.printStackTrace();
+			}
+			
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			String averagestring = String.format("%.2f", average);

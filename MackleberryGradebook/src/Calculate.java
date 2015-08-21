@@ -33,7 +33,6 @@ public class Calculate<summary> extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String ID = request.getParameter("A");
-		System.out.println("ID is " + ID);
 		String assignType = request.getParameter("B");
 		String summary = "", grade = "";
 		double numgrade = 0, average = 0, finavg = 0, count = 0;
@@ -162,6 +161,12 @@ public class Calculate<summary> extends HttpServlet {
 		catch (Exception e) {
             e.printStackTrace();}
 		
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		request.setAttribute("summary", summary);
 		getServletContext().getRequestDispatcher("/calcsum.jsp").forward(request, response);
 		

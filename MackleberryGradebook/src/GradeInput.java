@@ -30,6 +30,7 @@ public class GradeInput extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
     	String ID = request.getParameter("studetID");
+    	String classname = request.getParameter("class");
         String assignment = request.getParameter("assignment");
         String assignType = request.getParameter("assignType");
         String assignDate = request.getParameter("assignDate");
@@ -51,7 +52,7 @@ public class GradeInput extends HttpServlet {
                 e.printStackTrace();
             }
         try {
-        	String sql = "Insert into grades(STUDENTID, assignment, ASSIGNTYPE, ASSIGNDATE, grade) values (" + ID + ", '" + assignment + "', '"+ assignType +"', to_date('" + assignDate +"','MM/DD/YYYY'), "  + grade + ")";
+        	String sql = "Insert into grades(STUDENTID, classname, assignment, ASSIGNTYPE, ASSIGNDATE, grade) values (" + ID + ", '" + classname + "', '" + assignment + "', '"+ assignType +"', to_date('" + assignDate +"','MM/DD/YYYY'), "  + grade + ")";
             PreparedStatement preStatement = conn.prepareStatement(sql);
             ResultSet result = preStatement.executeQuery();
             result.next();
@@ -62,6 +63,13 @@ public class GradeInput extends HttpServlet {
             e.printStackTrace();
         }
         
+        
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         //This line brings you to the Gradebook page
         RequestDispatcher rd = request.getRequestDispatcher("Gradebook");
         rd.forward(request, response);

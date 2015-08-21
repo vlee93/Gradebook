@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Grade Form</title>
+<title>GPA Calc</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,50 +19,42 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">GradebookForm</a></li>
+      <li><a href="gradeForm.jsp">GradebookForm</a></li>
          <li><a href="allBook.jsp">All Gradebook</a></li>    
 		<li><a href="Calculation.jsp">Calculation</a></li>
-		<li><a href="GPAcalc.jsp">GPA Calculator</a></li>
+		<li class="active"><a href="#">GPA Calculator</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<h3> Welcome to the GPA Calculator </h3>
+<h4> Please enter the weights of the different assignment types (btw 1-4 credit hours): </h4>
 
-<h1> Welcome to the GradeBook </h1>
-<h3> Please input a grade below: </h3>
-
-
- <form action="GradeInput" method="post" role="form">
+ <form action="GPA" method="post" role="form">
   <div class="form-group">
-    <label for="studetID">Student ID:</label>
-    <input name="studetID">
+    <label for="homework">Homework:</label>
+    <input name="homework">
   </div>
     <div class="form-group">
-    <label for="class">Class Name:</label>
-    <input type = "text" name="class">
+    <label for="quiz">Quiz:</label>
+    <input name="quiz">
   </div>
   <div class="form-group">
-    <label for="assignment">Assignment:</label>
-    <input type="text" name="assignment">
+    <label for="test">Test:</label>
+    <input name="test">
   </div>
   <div class="form-group">
-    <label for="assignType">Type (homework, quiz, test, or project):</label>
-    <input type="text" name="assignType">
+    <label for="project">Project:</label>
+    <input name="project">
   </div>
-    <div class="form-group">
-    <label for="assignDate">Date (MM/DD/YYYY):</label>
-    <input name="assignDate">
-  </div>
-    <div class="form-group">
-    <label for="grade">Grade:</label>
-    <input name = "grade">
-  </div>
+  <p></p>
+  <h4> Please enter the studentID of the interested student: </h4>
+      <label for="studentID">Student ID:</label>
+    <input name="studentID">
+  
   <input type="submit" value="submit">
 </form>
-
-<h5> Or just press submit to go to gradebook.</h5>
-
 
 </body>
 </html>
