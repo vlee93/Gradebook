@@ -21,30 +21,46 @@
       <ul class="nav navbar-nav">
       <li><a href="gradeForm.jsp">GradebookForm</a></li>
          <li><a href="allBook.jsp">All Gradebook</a></li>    
-		<li class="active"><a href="#">Calculate</a></li>
+		<li class="active"><a href="#">Calculation</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<h1> Calculation Generator</h1>
-<h2> There are many customizable ways to view the gradebok </h2>
-<h2> How would you like to view the gradebook?  </h2>
+<h2> Calculation Generator</h2>
+<h4> There are many customizable ways to view the gradebok </h4>
+<h4> How would you like to view the gradebook?  </h4>
+<form action="Calculate" method="post" role="form">
+<h4> Please enter your information:</h4>
+<input type="text" placeholder="student Id" name="A">
+ <br><input type="text" placeholder="assignment type" name="B"><br>
+ 
+<h3> Choose an option: </h3>
+<h4> Sort by: </h4>
+A) StudentID:
+<input href="Calculate" type=submit name=display value="A"> </input>
+<p></p>
 
-<h3> Organize by: </h3>
-<input href="Calculate" type=submit name=display value="A) Student"> </input>
-<input href="Calculate" type=submit name=display value="B) Assignment Type"> </input>
-<input href="Calculate" type=submit name=display value="C) A & B"> </input>
+B) Assignment Type:
+<input href="Calculate" type=submit name=display value="B"> </input>
 <p></p>
-A) StudentID: <input type="text" placeholder="student Id" name="A"><br>
+
+C) StudentID & Assignment Type:
+<input href="Calculate" type=submit name=display value="C"> </input>
 <p></p>
-<h3> Find Grade Average: </h3>
-<input href="Calculate" type=submit name=display value="D) Student"> </input>
-<input href="Calculate" type=submit name=display value="E) Student by Assignment Type"> </input>
+
 <p></p>
-<h3> For a Particular Assignment </h3>
-<input href="Calculate" type=submit name=display value="F) Find Max Grade"> </input>
-<input href="Calculate" type=submit name=display value="G) Find Min Grade"> </input>
+
+<h4> Find: </h4>
+D) Student Grade Average: 
+<input href="Calculate" type=submit name=display value="D"> </input>
+<p></p>
+
+E) Highest and Lowest grade for assignment type:
+<input href="Calculate" type=submit name=display value="E"> </input>
+<p></p>
+
+</form>
 
 </body>
 </html>
